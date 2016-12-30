@@ -1,3 +1,24 @@
+def decode(s):
+    """ Decode a string that gives # to skip, buffer letters, actual letter
+    >>> decode("0h")
+    'h'
+
+    >>> decode("2abh")
+    'h'
+
+    >>> decode("0h1ae2bcy")
+    'hey'
+    """
+    message = ''
+    i = 0
+    while i < len(s) - 1:
+        skip = int(s[i])
+        message = message + s[i + skip + 1]
+        i = i + skip + 2
+
+    return message
+
+
 def count_recursively(lst):
     """ Count list using recursion
 

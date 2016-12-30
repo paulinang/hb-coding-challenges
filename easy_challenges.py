@@ -1,3 +1,19 @@
+def lemming_cafe(num_holes, cafes):
+    """ Find biggest distance lemming has to travel from a hole to a cafe
+    >>> lemming_cafe(6, [2, 4])
+    2
+    """
+
+    first_distance = cafes[0]
+    last_distance = num_holes - 1 - cafes[-1]
+    max_distance = max(first_distance, last_distance)
+    for i in range(len(cafes) - 1):
+        dist_between_cafes = cafes[i + 1] - cafes[i]
+        max_distance - max(max_distance, round(dist_between_cafes/2.0))
+
+    return max_distance
+
+
 def decode(s):
     """ Decode a string that gives # to skip, buffer letters, actual letter
     >>> decode("0h")

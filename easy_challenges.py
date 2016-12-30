@@ -1,5 +1,43 @@
+def binary_search(val):
+    """ Guess for a val from 1 to 100
+
+    >>> binary_search(50)
+    1
+
+    >>> binary_search(25)
+    2
+
+    >>> binary_search(75)
+    2
+
+    >>> binary_search(31) <= 7
+    True
+
+    >>> max([binary_search(i) for i in range(1, 101)])
+    7
+    """
+    # 1 to 100
+    # 1 to 50, 51 to 100
+    # 1 to 25, 26 to 50, 51 to 75, 76 to 100
+    low = 0
+    high = 101
+    guess = None
+    tries = 0
+
+    while guess != val:
+        tries += 1
+        guess = (high - low) / 2 + low
+        if val > guess:
+            low = guess
+        if val < guess:
+            high = guess
+
+    return tries
+
+
 def is_palindrome_anagram(word):
     """ Checks if word is anagram of plaindrome
+
     >>> is_palindrome_anagram("a")
     True
 

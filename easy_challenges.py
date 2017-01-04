@@ -11,6 +11,8 @@ def is_pangram(sentence):
         if char.isalpha():
             sentence_alphabets.add(char.lower())
 
+    # Using set comprehension, but linter detects error that DNE
+    # sentence_alphabets = {char.lower() for char in sentence if char.isalpha()}
     return len(sentence_alphabets) == 26
 
 

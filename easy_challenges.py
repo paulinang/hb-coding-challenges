@@ -1,3 +1,48 @@
+def lemur(branches):
+    """ How many jumps to traverse branches
+    >>> lemur([0])
+    0
+
+    >>> lemur([0, 0])
+    1
+
+    >>> lemur([0, 0, 0])
+    1
+
+    >>> lemur([0, 0, 0, 0])
+    2
+
+    >>> lemur([0, 1, 0])
+    1
+
+    >>> lemur([0, 0, 1, 0])
+    2
+
+    >>> lemur([0, 0, 0, 0, 1, 0, 0, 1, 0])
+    5
+    """
+
+    jumps = 0
+    current_branch = 0
+
+    # Deal with just live branches first
+    # While current branch is less that index of last branch
+    while current_branch < len(branches) - 1:
+        # Check if can jump 1 or 2 branches
+        # If there is a branch to land on in a 2 branch jump
+        # If current_branch + 2 is less or equal to index of last branch
+        if (current_branch + 2) < len(branches) and branches[current_branch + 2] != 1:
+            # Move up 2 branches
+            current_branch += 2
+        else:
+            # Move up 1 branch
+            current_branch += 1
+
+        jumps += 1
+
+    return jumps
+
+
 def lemming_cafe(num_holes, cafes):
     """ Find biggest distance lemming has to travel from a hole to a cafe
     >>> lemming_cafe(6, [2, 4])

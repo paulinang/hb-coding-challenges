@@ -1,3 +1,23 @@
+def pig_latin(phrase):
+    """ Pig latinize a phrase with no punctuation
+    >>> pig_latin('porcupines are cute')
+    'orcupinespay areyay utecay'
+
+    >>> pig_latin('give me an apple')
+    'ivegay emay anyay appleyay'
+    """
+
+    vowels = 'aeiou'
+    new_words = []
+    for word in phrase.split():
+        if not word[0] in vowels:
+            new_words.append(word[1:] + word[0] + 'ay')
+        else:
+            new_words.append(word + 'yay')
+
+    return ' '.join(new_words)
+
+
 def is_pangram(sentence):
     """ Does sentence contain all letters of alphabet?
     >>> is_pangram("The quick brown fox jumps over the lazy dog!")

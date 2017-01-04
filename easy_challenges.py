@@ -2,6 +2,10 @@ def lemming_cafe(num_holes, cafes):
     """ Find biggest distance lemming has to travel from a hole to a cafe
     >>> lemming_cafe(6, [2, 4])
     2
+    >>> lemming_cafe(5, [0])
+    4
+    >>> lemming_cafe(10, [2, 3])
+    6
     """
 
     first_distance = cafes[0]

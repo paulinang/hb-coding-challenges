@@ -1,3 +1,11 @@
+def missing_num(nums, max_num):
+    """ Find missing number in list from 1 to max_num
+    >>> missing_num([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
+    8
+    """
+    return (set(range(1, max_num + 1)) - set(nums)).pop()
+
+
 def lemur(branches):
     """ How many jumps to traverse branches
     >>> lemur([0])

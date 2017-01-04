@@ -1,3 +1,19 @@
+def is_pangram(sentence):
+    """ Does sentence contain all letters of alphabet?
+    >>> is_pangram("The quick brown fox jumps over the lazy dog!")
+    True
+
+    >>> is_pangram("I like cats, but not mice")
+    False
+    """
+    sentence_alphabets = set([])
+    for char in sentence:
+        if char.isalpha():
+            sentence_alphabets.add(char.lower())
+
+    return len(sentence_alphabets) == 26
+
+
 def missing_num(nums, max_num):
     """ Find missing number in list from 1 to max_num
     >>> missing_num([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)

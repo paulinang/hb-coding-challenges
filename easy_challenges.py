@@ -3,7 +3,8 @@ def missing_num(nums, max_num):
     >>> missing_num([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
     8
     """
-    return (set(range(1, max_num + 1)) - set(nums)).pop()
+    return sum(range(1, max_num + 1)) - sum(nums)
+    #return (set(range(1, max_num + 1)) - set(nums)).pop()
 
 
 def lemur(branches):

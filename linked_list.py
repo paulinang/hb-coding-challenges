@@ -25,6 +25,32 @@ class Node(object):
         return "".join(out)
 
 
+class LinkedList(object):
+    """Linked list."""
+
+    def __init__(self, head=None):
+        self.head = head
+
+    def as_string(self):
+        """Represent data for this list as a string.
+
+        >>> LinkedList(Node(3)).as_string()
+        '3'
+
+        >>> LinkedList(Node(3, Node(2, Node(1)))).as_string()
+        '321'
+        """
+
+        out = []
+        n = self.head
+
+        while n:
+            out.append(str(n.data))
+            n = n.next
+
+        return "".join(out)
+
+
 def remove_node(node):
     """Given a node in a linked list, remove it.
 
@@ -64,6 +90,26 @@ def reverse_linked_list(head):
         current = current.next
 
     return new
+
+
+def reverse_linked_list_in_place(lst):
+    """Given linked list, reverse the nodes in this linked list in place.
+
+    >>> ll = LinkedList(Node(1, Node(2, Node(3))))
+    >>> reverse_linked_list_in_place(ll)
+    >>> ll.as_string()
+    '321'
+    """
+
+    prev = None
+    curr = lst.head
+    while curr:
+        temp = curr.next
+        curr.next = prev
+        prev = curr
+        curr = temp
+
+    lst.head = prev
 
 
 if __name__ == "__main__":

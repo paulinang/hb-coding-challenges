@@ -1,3 +1,16 @@
+def rev_string(astring):
+    """Return reverse of string using recursion.
+
+    >>> rev_string("porcupine")
+    'enipucrop'
+    """
+
+    if len(astring) == 0:
+        return ''
+
+    return astring[-1] + rev_string(astring[:-1])
+
+
 def dedupe(items):
     """ Remove duplicates from list while keeping order. Return in new list
     >>> dedupe([1, 1, 1])

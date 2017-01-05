@@ -49,6 +49,57 @@ class Node(object):  # ...
             else:
                 self.right = Node(new_data)
 
+    def is_valid(self):
+        """Is this tree a valid BST?
+
+        >>> t = Node(4, Node(2), Node(6))
+        >>> t.is_valid()
+        True
+
+        >>> t = Node(4,
+        ...       Node(2, Node(1), Node(3)),
+        ...       Node(6, Node(5), Node(7))
+        ... )
+
+        >>> t.is_valid()
+        True
+
+        >>> t = Node(4,
+        ...       Node(2, Node(3), Node(3)),
+        ...       Node(6, Node(5), Node(7))
+        ... )
+
+        >>> t.is_valid()
+        False
+
+        >>> t = Node(4,
+        ...       Node(2, Node(1), Node(3)),
+        ...       Node(6, Node(1), Node(7))
+        ... )
+
+        >>> t.is_valid()
+        False
+        """
+        def _ok(n, lt, gt):
+            if n is None:
+                return True
+
+            if lt is not None and n.data > lt:
+                return False
+
+            if gt is not None and n.data < gt:
+                return False
+
+            if not _ok(n.left, n.data, gt):
+                return False
+
+            if not _ok(n.right, lt, n.data):
+                return False
+
+            return True
+
+        return _ok(self, None, None)
+
 
 if __name__ == "__main__":
     import doctest

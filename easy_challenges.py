@@ -1,3 +1,23 @@
+def show_evens(nums):
+    """Return list of indices for even nums
+
+    >>> lst = [1, 2, 3, 4, 6, 8]
+    >>> show_evens(lst)
+    [1, 3, 4, 5]
+
+    >>> show_evens([])
+    []
+
+    >>> show_evens([1, 3, 5])
+    []
+
+    >>> show_evens([2, 4, 6, 7])
+    [0, 1, 2]
+    """
+
+    return [i for i in range(len(nums)) if nums[i] % 2 == 0]
+
+
 def rev_string(astring):
     """Return reverse of string using recursion.
 

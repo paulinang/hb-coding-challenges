@@ -1,3 +1,17 @@
+def print_recursively(items):
+    """ Print each item of list using recursion
+    >>> print_recursively([1, 2, 3])
+    1
+    2
+    3
+    """
+    if len(items) == 0:
+        return
+
+    print items[0]
+    print_recursively(items[1:])
+
+
 def print_digits(num):
     """ Print each digit in reverse, not using string reversal
     >>> print_digits(1)

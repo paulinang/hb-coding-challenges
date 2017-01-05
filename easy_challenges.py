@@ -1,3 +1,24 @@
+def sum_list(nums):
+    """ Recursively sum list of nums
+    >>> sum_list([5, 5])
+    10
+
+    >>> sum_list([-5, 10, 4])
+    9
+
+    >>> sum_list([20])
+    20
+
+    >>> sum_list([])
+    0
+    """
+
+    if len(nums):
+        return nums[0] + sum_list(nums[1:])
+
+    return 0
+
+
 def split(astring, splitter):
     """Split astring by splitter and return list of splits.
 

@@ -13,7 +13,7 @@ def sum_list(nums):
     0
     """
 
-    if len(nums):
+    if nums:
         return nums[0] + sum_list(nums[1:])
 
     return 0

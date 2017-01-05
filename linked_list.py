@@ -49,6 +49,23 @@ def remove_node(node):
     node.next = node.next.next
 
 
+def reverse_linked_list(head):
+    """Given LL head node, return head node of new, reversed linked list.
+
+    >>> ll = Node(1, Node(2, Node(3)))
+    >>> reverse_linked_list(ll).as_string()
+    '321'
+    """
+
+    new = None
+    current = head
+    while current:
+        new = Node(current.data, new)
+        current = current.next
+
+    return new
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()

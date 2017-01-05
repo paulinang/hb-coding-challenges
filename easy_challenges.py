@@ -1,3 +1,41 @@
+def split(astring, splitter):
+    """Split astring by splitter and return list of splits.
+
+    >>> split("i love balloonicorn", " ")
+    ['i', 'love', 'balloonicorn']
+
+    >>> split("that is which is that which is that", " that ")
+    ['that is which is', 'which is that']
+
+    >>> split("that is which is that which is that", "that")
+    ['', ' is which is ', ' which is ', '']
+
+    >>> split("hello world", "nope")
+    ['hello world']
+    """
+
+    items = []
+    # go through each char in astring
+    # append to a new string
+    # check if next few chars are splitter
+    # if yes, append new string to items and start new string
+    # start checking chars after splitter
+    item = ''
+    i = 0
+    while i < len(astring):
+        if splitter == astring[i: i + len(splitter)]:
+            items.append(item)
+            item = ''
+            i += len(splitter) - 1
+        else:
+            item += astring[i]
+
+        i += 1
+
+    items.append(item)
+    return items
+
+
 def sort_ab(a, b):
     """ Return sorted list containing items of a and b
 

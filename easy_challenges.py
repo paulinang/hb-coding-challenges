@@ -1,3 +1,36 @@
+def dedupe(items):
+    """ Remove duplicates from list while keeping order. Return in new list
+    >>> dedupe([1, 1, 1])
+    [1]
+
+    >>> dedupe([1, 2, 1, 1, 3])
+    [1, 2, 3]
+
+    >>> dedupe([1, 2, 3])
+    [1, 2, 3]
+
+    >>> a = [1, 2, 3]
+    >>> b = dedupe(a)
+    >>> a == b
+    True
+
+    >>> a is b
+    False
+
+    >>> dedupe([])
+    []
+    """
+
+    unique = set(items)
+    new_lst = []
+    for item in items:
+        if item in unique:
+            new_lst.append(item)
+            unique.remove(item)
+
+    return new_lst
+
+
 def recursive_search(target, items, start=0):
     """ Search for target in list of items recursively
     >>> lst = ["hey", "there", "you"]

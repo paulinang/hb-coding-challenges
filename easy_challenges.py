@@ -1,3 +1,29 @@
+def primes(count):
+    """ Return count number of primes starting at 2
+    >>> primes(0)
+    []
+    >>> primes(1)
+    [2]
+
+    >>> primes(5)
+    [2, 3, 5, 7, 11]
+
+    >>> primes(7)
+    [2, 3, 5, 7, 11, 13, 17]
+    """
+    prime_nums = []
+    i = 0
+    num = 0
+    while i < count:
+        while not is_prime(num):
+            num += 1
+        prime_nums.append(num)
+        i += 1
+        num += 1
+
+    return prime_nums
+
+
 def is_prime(num):
     """ Helper function to check if num is prime
     >>> is_prime(1)

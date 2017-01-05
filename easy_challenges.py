@@ -1,3 +1,32 @@
+def is_prime(num):
+    """ Helper function to check if num is prime
+    >>> is_prime(1)
+    False
+
+    >>> is_prime(2)
+    True
+
+    >>> is_prime(3)
+    True
+
+    >>> is_prime(4)
+    False
+
+    >>> is_prime(11)
+    True
+    """
+
+    if num < 2:
+        return False
+    else:
+        i = num - 1
+        while i > 1:
+            if num % i == 0:
+                return False
+            i -= 1
+        return True
+
+
 def pig_latin(phrase):
     """ Pig latinize a phrase with no punctuation
     >>> pig_latin('porcupines are cute')

@@ -1,3 +1,23 @@
+def print_digits(num):
+    """ Print each digit in reverse, not using string reversal
+    >>> print_digits(1)
+    1
+
+    >>> print_digits(314)
+    4
+    1
+    3
+
+    >>> print_digits(12)
+    2
+    1
+
+    """
+    while num > 0:
+        print num % 10
+        num = num // 10
+
+
 def primes(count):
     """ Return count number of primes starting at 2
     >>> primes(0)

@@ -1,3 +1,24 @@
+def recursive_search(target, items, start=0):
+    """ Search for target in list of items recursively
+    >>> lst = ["hey", "there", "you"]
+    >>> recursive_search("hey", lst)
+    0
+
+    >>> recursive_search("you", lst)
+    2
+
+    >>> recursive_search("porcupine", lst) is None
+    True
+    """
+    if len(items) == 0:
+        return None
+
+    if target == items[0]:
+        return start
+
+    return recursive_search(target, items[1:], start + 1)
+
+
 def print_recursively(items):
     """ Print each item of list using recursion
     >>> print_recursively([1, 2, 3])

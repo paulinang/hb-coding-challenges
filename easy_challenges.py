@@ -1,6 +1,15 @@
 def rev_string(astring):
     """Return reverse of string using recursion.
 
+    >>> rev_string('')
+    ''
+
+    >>> rev_string('a')
+    'a'
+
+    >>> rev_string('ah')
+    'ha'
+
     >>> rev_string("porcupine")
     'enipucrop'
     """

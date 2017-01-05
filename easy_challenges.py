@@ -1,3 +1,32 @@
+def sort_ab(a, b):
+    """ Return sorted list containing items of a and b
+
+    >>> a = [1, 3, 5, 7]
+    >>> b = [2, 6, 8, 10]
+    >>> sort_ab(a, b)
+    [1, 2, 3, 5, 6, 7, 8, 10]
+    """
+
+    ab = []
+    # Go through a and b one at a time comparing which is smaller
+    i = 0
+    j = 0
+    # while (i < len(a)) or (j < len(b)):
+    while i < len(a) and j < len(b):
+        if a[i] < b[j]:
+            ab.append(a[i])
+            i += 1
+        else:
+            ab.append(b[j])
+            j += 1
+    if i == len(a):
+        ab.extend(b[j:])
+    else:
+        ab.extend(a[i:])
+
+    return ab
+
+
 def show_evens(nums):
     """Return list of indices for even nums
 
